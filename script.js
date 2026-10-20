@@ -195,11 +195,13 @@ const refreshPalette = (array) => {
         const newColor = generateRandomColorHex();
         colorBox.style.backgroundColor = newColor;
         currentColors[i].color = newColor;
+        colorBox.querySelector("span").textContent = newColor;
       }
       if (currentColors[i].color.startsWith("hsl")) {
         const newColor = generateRandomColorHSL();
         colorBox.style.backgroundColor = newColor;
         currentColors[i].color = newColor;
+        colorBox.querySelector("span").textContent = newColor;
       }
     }
   }
@@ -235,7 +237,7 @@ const updatePaletteSize = (selectedSize) => {
   return true;
 };
 
-//Funciones que calculan la luz de mi color para mostrar el span blanco o negro segun sea necesario para mejo9r contraste
+//Funciones que calculan la luz de mi color para mostrar el span blanco o negro segun sea necesario para mejorar contraste
 const getLightness = (color) => {
   if (color.startsWith("#")) {
     let separateLight = hexToHsl(color);
