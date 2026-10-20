@@ -58,7 +58,7 @@ const addColorBoxEvents = (index, color) => {
   const colorButtonSave = document.getElementById(`save-btn-${index}`);
   const colorButtonCopy = document.getElementById(`copy-btn-${index}`);
   colorButtonCopy.addEventListener("click", function (event) {
-    navigator.clipboard.writeText(color);
+    navigator.clipboard.writeText(currentColors[index].color);
     showTooltipCopy(event);
   });
   colorButtonSave.addEventListener("click", function (event) {
